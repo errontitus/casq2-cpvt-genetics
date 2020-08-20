@@ -1,0 +1,19 @@
+Oligonucleotide Abbrev	Oligonucleotide Name	Sequence	Notes
+hCASQ2_f	Primer to amplify H. sapiens CASQ2, forward	ATGAAGAGAACTCACTTGTTTATTGT	
+hCASQ2_r	Primer to amplify H. sapiens CASQ2, reverse	CTATTCATCATCATCGTCATCACTGT	
+hCASQ2_pet28_NheI_f	Primer to amplify H. sapiens CASQ2 with homology tails for the pET28 vector at NheI, forward (skips signal peptide sequence)	TTCCAGGGCCATATG GCTAGC AGGGCAGAAGAGGGGCTTA	
+hCASQ2_pet28_BamHI_r	Primer to amplify H. sapiens CASQ2 with homology tails for the pET28 vector at BamHI, reverse	CGGAGCTCGAATTC GGATCC CTATTCATCATCATCGTCATCACTGT	
+SDM_R33Q_F	Primer for site-directed mutagenesis of H. sapiens CASQ2, R33Q, forward	GGGAAGGACCaAGTGGTAAGTC	
+SDM_R33Q_R	Primer for site-directed mutagenesis of H. sapiens CASQ2, R33Q, reverse	ATCATATGTGGGGAAATTAAGC	
+SDM_Y55C_F	Primer for site-directed mutagenesis of H. sapiens CASQ2, Y55C, forward	CTTTGCCTCTgCTACCATGAG	
+SDM_Y55C_R	Primer for site-directed mutagenesis of H. sapiens CASQ2, Y55C, reverse	CAAGTCATATTTCTTTAAAACCTG	
+S173I_F	Primer for site-directed mutagenesis of H. sapiens CASQ2, S173I, forward	CTTTTTCAAGattGAGGACTCAGAATAC	
+S173I_R	Primer for site-directed mutagenesis of H. sapiens CASQ2, S173I, reverse	CCAATGAGTTTGATGTAGTC	
+K180R _F	Primer for site-directed mutagenesis of H. sapiens CASQ2, K180R, forward	AGAATACTACcggGCTTTTGAAGAAGC	
+K180R _R	Primer for site-directed mutagenesis of H. sapiens CASQ2, K180R, reverse	GAGTCCTCACTCTTGAAAAAG	
+hCasq2_SDM_R251H_F	Primer for site-directed mutagenesis of H. sapiens CASQ2, R251H, forward	ACTCTACGTCaCCTGCGCCCA	
+hCasq2_SDM_R251H_R	Primer for site-directed mutagenesis of H. sapiens CASQ2, R251H, reverse	GGGTCTTTGGTGTTCCTTCAC	
+SDM_P308L_F	Primer for site-directed mutagenesis of H. sapiens CASQ2, P308L, forward	TGGATCGACCtGGACGACTTT	
+SDM_P308L_R	Primer for site-directed mutagenesis of H. sapiens CASQ2, P308L, reverse	CAGGATGCTCAGATCGGG	
+SDM_D325E_F	Primer for site-directed mutagenesis of H. sapiens CASQ2, D325E, forward	TCAAGATTGAgCTATTCAGGC	
+SDM_D325E_R	Primer for site-directed mutagenesis of H. sapiens CASQ2, D325E, reverse	AAGTCTTCTCCCAGTAGG	

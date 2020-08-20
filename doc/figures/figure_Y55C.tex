@@ -1,0 +1,76 @@
+\newgeometry{left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm}
+\begin{figure}
+\centering
+\figuretitle{Figure~\ref{fig:kinetics_Y55C}}
+\begin{emptypanel}{}
+
+% \begin{tikzpicture}[%
+%     block/.style = {draw, align=center, anchor=west, minimum height=0.65cm, inner sep=2, text width=3cm},
+%     graphicblock/.style = {draw, anchor=west, inner sep=2}]
+    %
+    \node(dimerY55C)[inner sep=0pt,above right] {\includegraphics[width=\linewidth,height=1.5in,keepaspectratio]{../results/packing_mutants/output/packing_mutants_Y55C_overview_cropped.png}};
+    %
+    \path (dimerY55C.west)++(0.25,-0.1) coordinate (dimerY55CchainA);            
+    \path (dimerY55C.east)++(0.25,1) coordinate (dimerY55CchainB);
+    %
+    \node(dimerY55CchainAlabel) [above, inner sep=2pt, align=center] at (dimerY55CchainA) {Chain A};
+    \node(dimerY55CchainBlabel) [above, inner sep=2pt, align=center] at (dimerY55CchainB) {Chain B};
+    %
+    \node(captionA)[above left, inner sep=0pt] at (dimerY55C.north west) {\textbf{A}};
+    %
+    \path (dimerY55C.south)++(0.5,2.75) coordinate (Y55SW1);
+    \path (dimerY55C.south)++(1.25,3.5) coordinate (Y55NE1);
+    \node(Y55one) [fit={(Y55SW1) (Y55NE1)}, dashedrectanglefit] {};
+    %
+    \path (dimerY55C.east)++(0,0) coordinate (cY55label);
+    \node(Y55label) [above, inner sep=2pt, font=\small, font=\bfseries] at (cY55label) {Y55};
+    \path (Y55one.south east) edge[solid edge] (Y55label.north west);
+    % \node(Y55detail)[graphicblock,right=3cm of dimerY55C.east,anchor=west] {\includegraphics[width=\linewidth,height=1.5in,keepaspectratio]{../results/packing_mutants/output/packing_mutants_Y55C_closeup_cropped.png}};
+    % %
+    % \node(Y55above)[above, inner sep=2pt] at (Y55detail.north) {\textbf{Y55}};
+    % %
+    % \node(Y55below)[below, inner sep=2pt] at (Y55detail.south) {};
+    % %
+    % \path (Y55one.north east) edge[solid edge] (Y55detail.north west);
+    % %
+    %
+    %
+    % below=4cm of dimerY55C.south west
+    \node(Y55C_TCEP_kinetics)[inner sep=0pt,right=5cm of dimerY55C.north east, anchor=north]{\input{../results/assembly_kinetics/output/kinetics_CASQ2_Y55C_Turbidity_TCEP.pgf}};
+    %
+    \node(captionB)[above left, inner sep=0pt] at (Y55C_TCEP_kinetics.north west) {\textbf{B}};
+    %
+    % \node(Y55C_SEC)[inner sep=0pt,right=1.5cm of Y55C_TCEP_kinetics.east,anchor=west]{\input{../results/SEC/output/SEC_CPVT_mutation_Y55C.pgf}};
+    % %
+    % \node(lettercaption)[below right, inner sep=0pt] at (Y55C_SEC.north west) {\textbf{C}};
+    %
+    % below=3cm of Y55C_TCEP_kinetics.south west
+    % right=1.5cm of Y55C_TCEP_kinetics.east
+    \node(Y55C_TCEP_SEC)[inner sep=0pt,below=4cm of dimerY55C.south west,anchor=west]{\input{../results/SEC/output/SEC_CPVT_mutation_Y55C_TCEP.pgf}};
+    %
+    \node(captionC)[above left, inner sep=0pt] at (Y55C_TCEP_SEC.north west) {\textbf{C}};
+    %
+    % \rowspacersmall
+    % \begin{fullpanelvar}
+    %     \textbf{B}\\
+    %     \input{../results/assembly_kinetics/output/kinetics_CASQ2_Y55C_Turbidity_TCEP.pgf}\\
+    % \end{fullpanelvar}    
+    % \begin{fullpanelvar}
+    %     \textbf{C}\\
+    %     \input{../results/SEC/output/SEC_CPVT_mutation_Y55C.pgf}\\
+    % \end{fullpanelvar}    
+    % \begin{fullpanelvar}
+    %     \textbf{D}\\
+    %     \input{../results/SEC/output/SEC_CPVT_mutation_Y55C_TCEP.pgf}\\
+    % \end{fullpanelvar}
+\end{emptypanel}
+\caption{
+    %A reducing agent only partially rescues filamentation for the Y55C mutant. (A) Location of Y55 on the calsequestrin dimer. (B) Turbidity assay for the Y55C mutant performed at pH 5.6 in \SI{85}{\milli\Molar} \ch{KCl}, \SI{2}{\milli\Molar} \ch{MgCl2}, \SI{1}{\milli\Molar} \ch{CaCl2}, and \SI{1}{\milli\Molar} TCEP. (C) Size-exclusion chromatography (SEC) in \SI{85}{\milli\Molar} \ch{KCl} and \SI{1}{\milli\Molar} EDTA, plus \SI{1}{\milli\Molar} TCEP.
+    }
+\label{fig:kinetics_Y55C}
+\end{figure}
+\restoregeometry
+
+
+
+

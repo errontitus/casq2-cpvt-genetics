@@ -1,0 +1,24 @@
+\ProvidesPackage{style_scientific}
+
+\usepackage{siunitx}
+
+% Detect current font instead of defaulting to the current upright, serif math font.
+\sisetup{detect-all}
+
+\sisetup{range-phrase=--}
+
+% Chemistry
+\DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
+\DeclareSIUnit\Molar{\textsc{m}}
+\DeclareSIUnit\torr{torr}
+
+\usepackage{chemformula}
+
+% Ability to use SI and other symbols in text without a number. siunitx always requires a numeric context.
+\usepackage{amsmath}
+
+% doi links
+\RequirePackage{doi}
+
+% All sorts of links
+\usepackage{hyperref}

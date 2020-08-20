@@ -1,0 +1,27 @@
+%\section{Figures}
+\pagestyle{empty}
+\setcounter{figure}{2}
+\setcounter{table}{0}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+% Jason handling these.
+%\input{figures/figure_clinical_phenotypes.tex}
+%\input{figures/figure_arrhythmic_events.tex}
+\input{figures/figure_kinetics.tex}
+\input{figures/figure_SEC.tex}
+\input{figures/figure_structure.tex}
+\input{figures/figure_summary.tex}
+\clearpage
+% \subsection{Supplemental Figures}
+% Optionally make clicky links to the online file using \verb!\href{url}{description}!.
+% Reset the figure counter and add "S" to the figure caption (e.g. "Figure S1"). 
+\setcounter{figure}{0}
+\setcounter{table}{1}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\input{figures/figure_Y55C.tex}
+%\subsection{Supplemental Tables}
+%\clearpage % Prevent floats from floating past the longtable (to keep floats in order, because longtable is not a float).
+% The oligo table is now in Word.
+%\input{figures/supplement/table_oligos.tex}
+\clearpage

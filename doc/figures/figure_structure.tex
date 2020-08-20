@@ -1,0 +1,194 @@
+\newgeometry{left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm}
+\begin{figure}
+\centering
+\figuretitle{Figure~\ref{fig:interface_mutants}}
+\begin{emptypanel}{}
+    %
+    %%%%%%%%%%%%%%%%%%%%% Inter-Dimer Mutant K180R
+    %
+    \node(tetramer1)[inner sep=0pt,above right]{\includegraphics[width=\linewidth,height=1.25in,keepaspectratio]{../results/interface_mutants/output/interface_mutants_K180_overview_90_cropped.png}};
+    %
+    \node(lettercaption)[above left, inner sep=0pt] at (tetramer1.north west) {\textbf{A}};
+    %
+    \path (tetramer1.west)++(-0.35,-0.2) coordinate (chainA);            
+    \path (tetramer1.north)++(-0.75,0.25) coordinate (chainB);
+    \path (tetramer1.south)++(0.75,-0.4) coordinate (chainAprime);
+    \path (tetramer1.east)++(0.4,0) coordinate (chainBprime);
+    %
+    \node(chainAlabel) [above, inner sep=2pt, align=center] at (chainA) {Chain A};
+    \node(chainBlabel) [above, inner sep=2pt, align=center] at (chainB) {Chain B};
+    \node(chainAprimelabel) [above, inner sep=2pt, align=center] at (chainAprime) {Chain A'};
+    \node(chainBprimelabel) [above, inner sep=2pt, align=center] at (chainBprime) {Chain B'};
+    %
+    \path (tetramer1.south)++(0,1.75) coordinate (K180SW1);            
+    \path (tetramer1.south)++(0.45,2.325) coordinate (K180NE1);
+    \node(K180one) [fit={(K180SW1) (K180NE1)}, dashedrectanglefit] {};
+    %
+    \node(K180detail)[dashedrectanglefit,right=3.5cm of tetramer1.east,anchor=center] {\includegraphics[width=\linewidth,height=1.25in,keepaspectratio]{../results/interface_mutants/output/interface_mutants_K180_closeup_cropped.png}};
+    %
+    \node(K180above)[above, inner sep=2pt] at (K180detail.north) {K180 Inter-Dimer Region};
+    %
+    \path (K180one.north east) edge[solid edge] (K180detail.north west);
+    %
+    % Residue labels
+    \path (K180detail.south)++(-1.25,+2.25) coordinate (cK180);
+    \node(K180) [above, inner sep=0pt, font=\small, font=\bfseries] at (cK180) {K180};
+    \path (K180detail.south)++(1,0.5) coordinate (cD50);
+    \node(D50) [above, inner sep=0pt, font=\small, font=\bfseries] at (cD50) {D50};
+    %
+    %%%%%%%%%%%%%%%%%%%%% Inter-Dimer Mutant D325E
+    %
+    \node(tetramer2)[inner sep=0pt,below=3.5cm of tetramer1.south west,anchor=west]{\includegraphics[width=\linewidth,height=1.25in,keepaspectratio]{../results/interface_mutants/output/interface_mutants_S173_D325_overview_cropped.png}};
+    %
+    \node(rotator) at ([yshift=1cm]tetramer2.north) {\AxisRotator[rotate=0]};
+    \draw[line width=0.1ex] (rotator.east) -- (rotator.west);
+    \node(rotatorlabel)[inner sep=5pt,right] at (rotator.east) {\ang{90}};  
+    %
+    \path (tetramer2.west)++(-0.25,0.75) coordinate (tetramer2chainA);            
+    \path (tetramer2.north)++(-0.9,0.1) coordinate (tetramer2chainB);
+    \path (tetramer2.north)++(0.9,0.1) coordinate (tetramer2chainAprime);
+    \path (tetramer2.east)++(0.3,0.4) coordinate (tetramer2chainBprime);
+    %
+    \node(chainAlabel) [above, inner sep=2pt, align=center] at (tetramer2chainA) {Chain A};
+    \node(chainBlabel) [above, inner sep=2pt, align=center] at (tetramer2chainB) {Chain B};
+    \node(chainAprimelabel) [above, inner sep=2pt, align=center] at (tetramer2chainAprime) {Chain A'};
+    \node(chainBprimelabel) [above, inner sep=2pt, align=center] at (tetramer2chainBprime) {Chain B'};
+    %
+    \path (tetramer2.south)++(0.85,2) coordinate (D325NE1);            
+    \path (tetramer2.south)++(0.2,1.3) coordinate (D325SW1);
+    \node(D325one) [fit={(D325SW1) (D325NE1)}, dashedrectanglefit] {};
+    %
+    \node(D325detail)[dashedrectanglefit,right=3.5cm of tetramer2.east,anchor=center] {\includegraphics[width=\linewidth,height=1.25in,keepaspectratio]{../results/interface_mutants/output/interface_mutants_S173_D325_closeup_cropped.png}};
+    %
+    \node(D325above)[above, inner sep=2pt] at (D325detail.north) {S173 and D325 Inter-Dimer Region};
+    %
+    % S173
+    \path (D325detail.west)++(1.5,0.25) coordinate (cS173);
+    \node(S173) [above, inner sep=0pt, font=\small, font=\bfseries] at (cS173) {S173};
+    % D325
+    \path (D325detail.south)++(-1.25,+0.25) coordinate (cD325);
+    \node(D325) [above, inner sep=0pt, font=\small, font=\bfseries] at (cD325) {D325}; 
+    % D319
+    \path (D325detail.south)++(1.5,1) coordinate (cD319);
+    \node(D319) [above, inner sep=0pt, font=\small, font=\bfseries] at (cD319) {D319}; 
+    % K87
+    \path (D325detail.east)++(-1.25,0.5) coordinate (cK87);
+    \node(K87) [above, inner sep=0pt, font=\small, font=\bfseries] at (cK87) {K87}; 
+    %    
+    \path (D325one.north east) edge[solid edge] (D325detail.north west);
+    %
+    %%%%%%%%%%%%%%%%%%%%% Dimer Packing Mutant P308L
+    %
+    \node(dimerP308)[inner sep=0pt,right=6.5cm of tetramer1.north east,anchor=north west] {\includegraphics[width=\linewidth,height=1.25in,keepaspectratio]{../results/packing_mutants/output/packing_mutants_P308L_overview_cropped.png}};
+    %
+    \path (dimerP308.west)++(0.25,-0.1) coordinate (dimerP308chainA);            
+    \path (dimerP308.east)++(-0.25,-0.1) coordinate (dimerP308chainB);
+    %
+    \node(dimerP308chainAlabel) [above, inner sep=2pt, align=center] at (dimerP308chainA) {Chain A};
+    \node(dimerP308chainBlabel) [above, inner sep=2pt, align=center] at (dimerP308chainB) {Chain B};
+    %
+    \node(P308detail)[dashedrectanglefit, below=1cm of dimerP308] {\includegraphics[width=\linewidth,height=1.5in,keepaspectratio]{../results/packing_mutants/output/packing_mutants_P308L_closeup_cropped.png}};
+    %
+    \node(lettercaption)[above left, inner sep=0pt] at (dimerP308.north west) {\textbf{B}};
+    %
+    \path (dimerP308.south)++(-0.4,1) coordinate (P308SW1);            
+    \path (dimerP308.south)++(0.4,1.75) coordinate (P308NE1);
+    \node(P308one) [fit={(P308SW1) (P308NE1)}, dashedrectanglefit] {};
+    %
+    \node(P308above)[above, inner sep=2pt] at (P308detail.north) {P308 Intra-Dimer Region};
+    %
+    % P308
+    \path (P308detail.north)++(0,-0.75) coordinate (cP308);
+    \node(P308label) [above, inner sep=2pt, font=\small, font=\bfseries] at (cP308) {P308};
+    \path (P308detail.west)++(0.5,0.75) coordinate (cP308west);
+    \path (P308detail.east)++(-0.5,0.75) coordinate (cP308east);
+    \path (P308label.south west) edge[solid edge] (cP308west.east);
+    \path (P308label.south east) edge[solid edge] (cP308east.west);
+    %
+    \path (P308detail.south)++(0,0.75) coordinate (cD310);
+    \node(D310label) [above, inner sep=2pt, font=\small, font=\bfseries] at (cD310) {D310};
+    \path (P308detail.south)++(-0.6,1.75) coordinate (cD310west);
+    \path (P308detail.south)++(0.6,1.75) coordinate (cD310east);
+    \path (D310label.north west) edge[solid edge] (cD310west.east);
+    \path (D310label.north east) edge[solid edge] (cD310east.west);
+    %    
+    \path (P308one.south east) edge[solid edge] (P308detail.north east);
+    %
+    % For reference, also show where R33 is.
+    %
+    % \path (dimerP308L.south)++(-0.4,2.5) coordinate (R33SW1);            
+    % \path (dimerP308L.south)++(-0.75,3.25) coordinate (R33NE1);
+    % \node(R33) [fit={(R33SW1) (R33NE1)}, dashedrectanglefit] {};
+    % %
+    % \node(R33Label)[inner sep=0pt] at (dimerP308L.south west) {R33Q};
+    % below=1cm of dimerP308L.south west
+    %
+    %%%%%%%%%%%%%%%%%%%%% Mutant R251H
+    %
+    \node(dimerR251)[inner sep=0pt,below=3.5cm of tetramer2.south west,anchor=west] {\includegraphics[width=\linewidth,height=1.25in,keepaspectratio]{../results/packing_mutants/output/packing_mutants_R251H_overview_cropped.png}};
+    %
+    \path (dimerR251.west)++(0.25,-0.1) coordinate (dimerR251chainA);            
+    \path (dimerR251.east)++(-0.25,-0.1) coordinate (dimerR251chainB);
+    %
+    \node(dimerR251chainAlabel) [above, inner sep=2pt, align=center] at (dimerR251chainA) {Chain A};
+    \node(dimerR251chainBlabel) [above, inner sep=2pt, align=center] at (dimerR251chainB) {Chain B};
+    %
+    \node(lettercaption)[above left, inner sep=0pt] at (dimerR251.north west) {\textbf{C}};
+    %
+    \path (dimerR251.south)++(-0.5,0.6) coordinate (R251SW1);            
+    \path (dimerR251.south)++(0.5,1.4) coordinate (R251NE1);
+    \node(R251one) [fit={(R251SW1) (R251NE1)}, dashedrectanglefit] {};
+    %
+    \node(R251detail)[dashedrectanglefit, right=1.5cm of dimerR251.east] {\includegraphics[width=\linewidth,height=1.25in,keepaspectratio]{../results/packing_mutants/output/packing_mutants_R251H_closeup_cropped.png}};
+    %
+    \node(R251above)[above, inner sep=2pt] at (R251detail.north) {R251 Intra-Dimer Region};
+    %
+    \node(R251below)[below, inner sep=2pt] at (R251detail.south) {};
+    %
+    \path (R251detail.north)++(0,-0.75) coordinate (cR251);
+    \path (R251detail.south)++(0,0.35) coordinate (cK276);
+    \node(R251label) [above, inner sep=2pt, font=\small, font=\bfseries] at (cR251) {R251};
+    \node(K276label) [above, inner sep=2pt, font=\small, font=\bfseries] at (cK276) {K276};
+    \path (R251detail.west)++(1.125,0.6) coordinate (cR251west);
+    \path (R251detail.east)++(-1.125,0.6) coordinate (cR251east);
+    \path (R251label.south west) edge[solid edge] (cR251west.east);
+    \path (R251label.south east) edge[solid edge] (cR251east.west);
+    %\node(P308west) [above, inner sep=0pt, font=\small, font=\bfseries] at (cP308west) {P308};
+    %    
+    \path (R251one.north east) edge[solid edge] (R251detail.north west);
+    %
+    %%%%%%%%%%%%%%%%%%%%% Packing mutant hypothesis
+    %
+    \node(overlay_rmsd)[inner sep=0pt,right=7cm of dimerR251.north east, anchor=north west]{\includegraphics[width=\linewidth,height=0.75in,keepaspectratio]{../results/interface_mutants/output/packing_mutant_hypothesis_cropped.png}};
+    %
+    \node(lettercaption)[above left, inner sep=0pt] at (overlay_rmsd.north west) {\textbf{D}};
+    %
+    \node(rotator) at ([xshift=0.75cm]overlay_rmsd.east) {\AxisRotator[rotate=90]};
+    \draw[line width=0.1ex] (rotator.north) -- (rotator.south);
+    \node(rotatorlabel)[inner sep=5pt,below] at (rotator.south) {\ang{90}};   
+    %
+    \node(overlay_rmsd90)[inner sep=0pt,right=1.5cm of overlay_rmsd.east, anchor=west]{\includegraphics[width=\linewidth,height=0.75in,keepaspectratio]{../results/interface_mutants/output/packing_mutant_hypothesis_90_cropped.png}};
+    %
+    \node(overlay_rmsd_label) [below, inner sep=2pt, align=center] at ([yshift=-0.5cm]rotatorlabel.south) {Gray: 6OWV Dimer\\~\\Color: Widened 6OWV Dimer with Outward\\Rotation of Chains};
+    %
+    \node(spectrumbarrmsd)[inner sep=0pt,below=0.5cm of overlay_rmsd_label]{\includegraphics[width=\linewidth,height=0.05in,keepaspectratio]{../bin/structure/pymol/pymol_blue_red_spectrum.png}};
+    %
+    \node(rmsdlabel) [below, inner sep=2pt] at (spectrumbarrmsd.south) {RMSD};
+    %
+%    \path (overlay_rmsd.north east)++(-0.25,-0.25) coordinate (arcstart);
+    %
+%     \path[-] (dimer_roi_left.north) edge (closeup_143_rect.north west);
+% %    \path[-] (dimer_roi_right.north) edge (closeup_143_rect.north west);
+%     \path[-] (dimer_roi_center.south) edge (closeup_310_rect.north east);
+%     \draw[<-, line width=0.2mm] (arcstart) arc (30:90:0.5);
+%     \node(arclabel) [below, inner sep=3pt] at (arcstart) {\ang{20}};
+\end{emptypanel}
+\caption{
+    %(A) Dominant-acting CPVT-associated CASQ2 mutations S173I, K180R, and D325E disrupt the inter-dimer interface of CASQ2 filaments. (B) and (C) Other putative dominant-acting mutations (R251H, P308L) are hypothesized to act via a different mechanism. (D) Overlay of a loosely-packed CASQ2 dimer onto a tightly-packed dimer, showing that the loosely-packed dimer is expanded, with its larger dimension possibly incompatible with robust filamentation.
+    }
+\label{fig:interface_mutants}
+\end{figure}
+
+
+
+

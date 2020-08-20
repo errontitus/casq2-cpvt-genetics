@@ -1,0 +1,312 @@
+% Cartoon colors (match what is coming from PyMOL)
+% Arguably these definitions could be scoped for the whole manuscript, but I'm not using them elsewhere at the moment.
+\newcommand{\colorHydrophobicCore}{pymolruby}
+\newcommand{\colorChainA}{pymolorange}
+\newcommand{\colorChainB}{pymolforest}
+\newcommand{\colorChainAprime}{pymolskyblue}
+\newcommand{\colorChainBprime}{pymolgold}
+\newcommand{\colorSolventExposed}{pymolslate}
+\newcommand{\colorDimerInterface}{pymolorange}
+\newcommand{\colorPackingVariant}{pymolred}
+\newcommand{\colorInterDimerInterfaceInside}{pymolskyblue}
+\newcommand{\colorInterDimerInterfaceOutside}{pymolgold}
+%
+%
+\newgeometry{left=1cm,right=1cm,top=0.5cm,bottom=0.5cm}
+\thispagestyle{empty}
+\begin{figure}
+    \centering
+    \figuretitle{Figure~\ref{fig:summary}}
+    \begin{emptypanel}{}
+        %
+        \node(dimer)[inner sep=0pt,above right,anchor=west]{\includegraphics[width=\linewidth,height=1.125in,keepaspectratio]{../results/summary/output/interface_residues_intra_dimer_overview_cropped.png}};
+        %
+        \node(dimerlabel)[inner sep=0pt,above=0.5cm of dimer.north]{Dimer Interface};
+        %
+        \node(lettercaptionA)[below right, inner sep=0pt] at ([xshift=-0.25cm,yshift=2cm]dimer.north west) {\textbf{A}};
+        %
+        \node(legendIntra)[inner sep=0pt] at ([xshift=1cm,yshift=-0.75cm]dimer.south west) {};
+        %
+        \node(hydrophobic_core)[inner sep=0pt,right=1cm of dimer.east]{\includegraphics[width=\linewidth,height=1.125in,keepaspectratio]{../results/summary/output/hydrophobic_core_overview_cropped.png}};
+        %
+        \path (hydrophobic_core.north)++(0.3,-0.25) coordinate (coreThio1NE);            
+        \path (hydrophobic_core.north)++(-0.6,-1.4) coordinate (coreThio1SW);
+        \node(roiThio1) [fit={(coreThio1SW) (coreThio1NE)}, dashedrectanglefit] {};    
+        %
+        \path (hydrophobic_core.south)++(0,1.125) coordinate (coreThio2NE);            
+        \path (hydrophobic_core.south)++(-1,0.35) coordinate (coreThio2SW);
+        \node(roiThio2) [fit={(coreThio2SW) (coreThio2NE)}, dashedrectanglefit] {};    
+        %
+        \path (hydrophobic_core.south)++(1,1.5) coordinate (coreThio3NE);            
+        \path (hydrophobic_core.south)++(0.1,0.6) coordinate (coreThio3SW);
+        \node(roiThio3) [fit={(coreThio3SW) (coreThio3NE)}, dashedrectanglefit] {};    
+        %
+        \node(thio1Label)[inner sep=0pt,align=center,above,inner sep=2pt] at (roiThio1.north west) {Domain I};
+        \node(thio2Label)[inner sep=0pt,align=center,below,inner sep=2pt] at (roiThio2.south west) {Domain II};
+        \node(thio3Label)[inner sep=0pt,align=center,below,inner sep=2pt] at (roiThio3.south east) {Domain III};
+        %
+        \node(hydrophobic_core_label)[inner sep=0pt,above=0.5cm of hydrophobic_core.north,align=center]{Hydrophobic Core\\(Chain A Shown)};
+        %
+        \node(legendHydrophobic)[inner sep=0pt,below=0.75cm of hydrophobic_core.south west]{};
+        %
+        \draw [decorate,decoration={brace,amplitude=10pt,raise=4pt},yshift=0pt] ([shift={(0cm,1cm)}]dimer.north west) -- ([shift={(0cm,1cm)}]hydrophobic_core.north east) node(group_label_recessive) [black,midway,yshift=0.75cm,xshift=2cm,text width=6cm] {Recessive CPVT};
+        %
+        %
+        %
+        %
+        \node(packing_variants)[inner sep=0pt,right=1.5 of hydrophobic_core.east]{\includegraphics[width=\linewidth,height=1.125in,keepaspectratio]{../results/summary/output/interface_residues_packing_overview_cropped.png}};
+        %
+        \path (packing_variants.west)++(-0.125,-1.125) coordinate (arcstartA);
+        \path (packing_variants.east)++(0.125,-1.125) coordinate (arcstartB);
+        \draw[<-, line width=0.3mm] (arcstartB) arc (-30:-90:1);
+        \draw[<-, line width=0.3mm] (arcstartA) arc (30:90:-1);
+        %
+        \node(packing_variants_label)[inner sep=0pt,above=0.5cm of packing_variants.north,align=center]{Dimer Packing Variants\\(Hypothesized)};
+        %
+        \node(lettercaptionB)[below right, inner sep=0pt] at ([xshift=-0.25cm,yshift=2cm]packing_variants.north west) {\textbf{B}};
+        %
+        \node(legendInterPacking)[inner sep=0pt] at ([xshift=1cm,yshift=-0.75cm]packing_variants.south west){};
+        %
+        \node(tetramer)[inner sep=0pt,right=1cm of packing_variants.east]{\includegraphics[width=\linewidth,height=1.125in,keepaspectratio]{../results/summary/output/interface_residues_inter_dimer_overview_cropped.png}};
+        %
+        \node(interdimerlabel)[inner sep=0pt,above=0.5cm of tetramer.north]{\textit{Inter}-Dimer Interface};
+        %
+        \node(legendInterInside)[inner sep=0pt] at ([xshift=1.5cm,yshift=-0.75cm]tetramer.south west) {};
+        \node(legendInterOutside)[inner sep=0pt,below=1.25cm of legendInterInside.south]{};
+        %
+        \draw [decorate,decoration={brace,amplitude=10pt,raise=4pt},yshift=0pt] ([shift={(0cm,1cm)}]packing_variants.north west) -- ([shift={(0cm,1cm)}]tetramer.north east) node(group_label_dominant) [black,midway,yshift=0.75cm,xshift=1.5cm,text width=6cm] {Known or Putative Dominant CPVT};
+        %
+        \path (tetramer.west)++(-0.25,0.5) coordinate (chainA_tetramer);           
+        \path (tetramer.north)++(-1.5,-0.25) coordinate (chainB_tetramer);
+        \path (tetramer.north)++(1.5,-0.25) coordinate (chainAprime_tetramer);
+        \path (tetramer.east)++(0.25,0.5) coordinate (chainBprime_tetramer);
+        %
+        \node(chainAlabel) [above, inner sep=2pt, align=center] at (chainA_tetramer) {Chain A};
+        \node(chainBlabel) [above, inner sep=2pt, align=center] at (chainB_tetramer) {Chain B};
+        \node(chainAprimelabel) [above, inner sep=2pt, align=center] at (chainAprime_tetramer) {Chain A'};
+        \node(chainBprimelabel) [above, inner sep=2pt, align=center] at (chainBprime_tetramer) {Chain B'};
+        %
+        %
+        %
+        %
+        \newcommand{\legendcolorsquaresize}{0.3}
+        %
+        \fill [\colorChainA] ($(legendIntra.north west)+(-\legendcolorsquaresize,\legendcolorsquaresize)$) rectangle ($(legendIntra.north west)+(0,-\legendcolorsquaresize)$);
+        %
+        \fill [\colorChainB] ($(legendIntra.north west)+(0,\legendcolorsquaresize)$) rectangle ($(legendIntra.north west)+(\legendcolorsquaresize,-\legendcolorsquaresize)$);
+        %
+        \node(legendIntraLabel)[inner sep=0pt,right=0.5cm of legendIntra.east,align=center]{Dimer Interface\\Residues}; 
+        \node(legendIntraDetail)[inner sep=0pt,below=0.18cm of legendIntraLabel.south,align=center,font=\scriptsize]{(R33Q, D307H, D310N)}; 
+        %
+        \fill [\colorHydrophobicCore] ($(legendHydrophobic.north west)+(-\legendcolorsquaresize,\legendcolorsquaresize)$) rectangle ($(legendHydrophobic.north west)+(\legendcolorsquaresize,-\legendcolorsquaresize)$);
+        \node(legendHydrophobicLabel)[inner sep=0pt,right=0.5cm of legendHydrophobic.east,align=center]{Hydrophobic Core\\Residues}; 
+        \node(legendHydrophobicDetail)[inner sep=0pt,below=0.18cm of legendHydrophobicLabel.south,align=center,font=\scriptsize]{(C53F, L77P, L167H,\\F182S, P191L, I270T)}; 
+        %
+        %
+        \fill [\colorPackingVariant] ($(legendInterPacking.north west)+(-\legendcolorsquaresize,\legendcolorsquaresize)$) rectangle ($(legendInterPacking.north west)+(\legendcolorsquaresize,-\legendcolorsquaresize)$);
+        \node(legendInterPackingLabel)[inner sep=0pt,right=0.5cm of legendInterPacking.east,align=center]{Dimer Packing\\Residues};
+        \node(legendInterPackingDetail)[inner sep=0pt,below=0.18cm of legendInterPackingLabel.south,align=center,font=\scriptsize]{(R251H, P308L)}; 
+        %
+        \fill [\colorChainB] ($(legendInterInside.north west)+(-\legendcolorsquaresize,\legendcolorsquaresize)$) rectangle ($(legendInterInside.north west)+(0,-\legendcolorsquaresize)$);
+        %
+        \fill [\colorChainAprime] ($(legendInterInside.north west)+(0,\legendcolorsquaresize)$) rectangle ($(legendInterInside.north west)+(\legendcolorsquaresize,-\legendcolorsquaresize)$);
+        %
+        \node(legendInterInsideLabel)[inner sep=0pt,right=0.5cm of legendInterInside.east,align=center]{\textit{Inter}-Dimer Residues\\(Inside Chains Participating)}; 
+        \node(legendInterInsideDetail)[inner sep=0pt,below=0.18cm of legendInterInsideLabel.south,align=center,font=\scriptsize]{(S173I, K180R)}; 
+        %
+        \node(legendInterInsideLabelB)[inner sep=0pt,above left] at ([xshift=-0.5mm,yshift=3.5mm]legendInterInside.north west){B}; 
+        %
+        \node(legendInterInsideLabelAprime)[inner sep=0pt,above right] at ([xshift=0.5mm,yshift=3.5mm]legendInterInside.north west){A'}; 
+        %
+        %
+        %
+        \fill [\colorChainA] ($(legendInterOutside.north west)+(-\legendcolorsquaresize,\legendcolorsquaresize)$) rectangle ($(legendInterOutside.north west)+(0,-\legendcolorsquaresize)$);
+        %
+        \fill [\colorChainBprime] ($(legendInterOutside.north west)+(0,\legendcolorsquaresize)$) rectangle ($(legendInterOutside.north west)+(\legendcolorsquaresize,-\legendcolorsquaresize)$);
+        %
+        \node(legendInterOutsideLabel)[inner sep=0pt,right=0.5cm of legendInterOutside.east,align=center]{\textit{Inter}-Dimer Residues\\(Outside Chains Participating)}; 
+        %
+        \node(legendInterOutsideLabelA)[inner sep=0pt,above left] at ([xshift=-0.5mm,yshift=3.5mm]legendInterOutside.north west){A}; 
+        %
+        \node(legendInterOutsideLabelBprime)[inner sep=0pt,above right] at ([xshift=0.5mm,yshift=3.5mm]legendInterOutside.north west){B'}; 
+        %
+        \node(legendInterOutsideDetail)[inner sep=0pt,below=0.18cm of legendInterOutsideLabel.south,align=center,font=\scriptsize]{(D325E)};  
+        %
+        \node(lettercaptionC)[below right, inner sep=0pt] at ([yshift=-7cm]lettercaptionA.south) {\textbf{C}};
+    \end{emptypanel}
+    %\caption{}
+    % 
+    % Variant colors (match cartoon colors where applicable). These correspond to the Variant categories below.
+    \newcommand{\colorVariantHetNegHydrophobicCore}{\colorHydrophobicCore}
+    \newcommand{\colorVariantHetNegDimerInterface}{\colorDimerInterface}
+    \newcommand{\colorVariantHetNegUnknownMechanism}{Gray25}
+    \newcommand{\colorVariantHetPosInterDimerInterfaceInside}{\colorInterDimerInterfaceInside}
+    \newcommand{\colorVariantHetPosInterDimerInterfaceOutside}{\colorInterDimerInterfaceOutside}
+    \newcommand{\colorVariantHetPosPacking}{\colorPackingVariant}
+    \newcommand{\colorVariantHetPosUnknownMechanism}{Gray75}    
+    %
+    \begin{texshade}{../results/shared_pdb/orthology/output/casq2_casq1_aligned.fasta}
+        \seqtype{P}
+        \constosingleseq{1}
+        \setends{1}{1..399}
+        % Supplementary table 3 gives us missense variants found 
+        % in association with a CPVT phenotype, as of early 2020.
+        % Let's show all of them.
+        %
+        % 1. Ph- Het, hydrophobic core.
+        % 2. Ph- Het, dimer interface 
+        % 3. Ph- Het, unknown mechanism(s)
+        % 4. Ph+ Het, inter-dimer interface 
+        % 5. Ph+ Het, hypothesized packing mutant
+        % 6. Ph+ Het, unknown mechanism(s)
+        %
+        % R33Q (recessive, dimer interface)
+        % E39K Ph- Het, unknown mechanism(s)
+        % C53F core
+        % Y55C (Ph+ Het, packing)
+        % L77P core
+        % L167H core
+        % S173I (Ph+ Het, inter dimer)
+        % K180R (Ph+ Het, inter dimer)
+        % F182S core
+        % P191L core
+        % K206N (Ph+ Het, unknown)
+        % P231S Ph- Het, unknown mechanism(s)
+        % R250C Ph- Het, unknown mechanism(s)
+        % R251H packing
+        % I270T core
+        % D307H (recessive, dimer interface)
+        % P308Q (Ph+ Het, packing)
+        % P308L (Ph+ Het, packing)
+        % D310N (recessive, dimer interface)
+        % D325E (Ph+ Het, inter dimer)
+        % W361R (Ph+ Het, unknown)
+        % L366P Ph- Het, unknown mechanism(s)
+        \shaderegion{1}{33..33}{White}{\colorVariantHetNegDimerInterface}
+        \feature{bottom}{1}{33..33}{fill:|}{R33Q}
+        %
+        \shaderegion{1}{39..39}{Black}{\colorVariantHetNegUnknownMechanism}
+        \feature{ttttop}{1}{39..39}{fill:|}{E39K}
+        %
+        \shaderegion{1}{53..53}{White}{\colorVariantHetNegHydrophobicCore}
+        \feature{bottom}{1}{53..53}{fill:|}{C53F}
+        %
+        \shaderegion{1}{55..55}{White}{\colorVariantHetPosUnknownMechanism}
+        \feature{ttttop}{1}{55..55}{fill:|}{Y55C}
+        %
+        \shaderegion{1}{77..77}{White}{\colorVariantHetNegHydrophobicCore}
+        \feature{bottom}{1}{77..77}{fill:|}{L77P}
+        %
+        \shaderegion{1}{167..167}{White}{\colorVariantHetNegHydrophobicCore}
+        \feature{ttttop}{1}{167..167}{fill:|}{L167H}
+        %
+        \shaderegion{1}{173..173}{White}{\colorVariantHetPosInterDimerInterfaceInside}
+        \feature{bottom}{1}{173..173}{fill:|}{S173I}
+        %
+        \shaderegion{1}{180..180}{White}{\colorVariantHetPosInterDimerInterfaceInside}
+        \feature{bottom}{1}{180..180}{fill:|}{K180R}
+        %
+        \shaderegion{1}{182..182}{White}{\colorVariantHetNegHydrophobicCore}
+        \feature{ttttop}{1}{182..182}{fill:|}{F182S}
+        %
+        \shaderegion{1}{191..191}{White}{\colorVariantHetNegHydrophobicCore}
+        \feature{bottom}{1}{191..191}{fill:|}{P191L}
+        %
+        \shaderegion{1}{206..206}{White}{\colorVariantHetPosUnknownMechanism}
+        \feature{bottom}{1}{206..206}{fill:|}{K206N}
+        %
+        \shaderegion{1}{231..231}{Black}{\colorVariantHetNegUnknownMechanism}
+        \feature{bottom}{1}{231..231}{fill:|}{P231S}
+        %
+        \shaderegion{1}{250..250}{Black}{\colorVariantHetNegUnknownMechanism}
+        \feature{ttttop}{1}{250..250}{fill:|}{R250C}
+        %
+        \shaderegion{1}{251..251}{Black}{\colorVariantHetPosPacking}
+        \feature{bottom}{1}{251..251}{fill:|}{R251H}
+        %
+        \shaderegion{1}{270..270}{White}{\colorVariantHetNegHydrophobicCore}
+        \feature{ttttop}{1}{270..270}{fill:|}{I270T}
+        %
+        \shaderegion{1}{307..307}{White}{\colorVariantHetNegDimerInterface}
+        \feature{bottom}{1}{307..307}{fill:|}{D307H}
+        %
+        \shaderegion{1}{308..308}{White}{\colorVariantHetPosPacking}
+        \feature{ttttop}{1}{308..308}{fill:|}{P308L, P308Q}
+        %
+        \shaderegion{1}{310..310}{White}{\colorVariantHetNegDimerInterface}
+        \feature{bbottom}{1}{310..310}{fill:|}{D310N}
+        %
+        \shaderegion{1}{325..325}{Black}{\colorVariantHetPosInterDimerInterfaceOutside}
+        \feature{bottom}{1}{325..325}{fill:|}{D325E}
+        %
+        \shaderegion{1}{361..361}{White}{\colorVariantHetPosUnknownMechanism}
+        \feature{bottom}{1}{361..361}{fill:|}{W361R}
+        %
+        \shaderegion{1}{366..366}{Black}{\colorVariantHetNegUnknownMechanism}
+        \feature{ttttop}{1}{366..366}{fill:|}{L366P}
+        %
+        %
+        %
+        % Annotation of various residue categories. This appears to render correctly as long as everything is given to TexShade in sequential order.
+        \input{../results/summary/output/interface_residues_texshade.tex}
+        \input{../results/summary/output/surface_residues_texshade.tex}
+        %
+        \feature{bottom}{1}{1..22}{brace[Black]}{Signal Peptide (1-19) [Black]}
+        \feature{bbottom}{1}{1..22}{}{Not Observed (20-22) [Black]}
+        \feature{bottom}{1}{58..68}{brace[Black]}{Not Observed [Black]}
+        \feature{bbottom}{1}{58..68}{}{(Disordered) [Black]}
+        \feature{bottom}{1}{259..267}{brace[Black]}{Not Observed [Black]}
+        \feature{bbottom}{1}{259..267}{}{(Disordered) [Black]}
+        \feature{bottom}{1}{372..399}{brace[Black]}{Not Observed [Black]}
+        \feature{bbottom}{1}{372..399}{}{(Disordered Acidic Tail) [Black]}
+        %
+        \threshold{100}
+        \setsize{features}{tiny}        
+        \hideconsensus
+        \hideseq{2}
+        \showlegend
+        \shadingmode{functional}
+        \setsize{names}{scriptsize}
+        \setsize{residues}{scriptsize}
+        \setsize{ruler}{scriptsize}
+        \setsize{featurenames}{scriptsize}
+        \setsize{featurestylenames}{tiny}
+        \setsize{features}{scriptsize}
+        \setsize{numbering}{scriptsize}
+        \setshape{features}{up}
+        \setfamily{features}{tt}
+        \bottomspace{3pt}
+        \ttopspace{-\baselineskip}
+        \tttopspace{-\baselineskip}
+        \ttttopspace{-\baselineskip}
+        \featurerule{5pt}
+        \showfeaturestylename{top}{Solvent-Exposed}
+        \showfeaturestylename{ttop}{Hydrophobic Core}
+        \showfeaturestylename{tttop}{Dimer Interface}
+        \showfeaturestylename{ttttop}{Inter-Dimer Interface}
+        %
+        \showruler{ttttop}{CASQ2.H.sapiens}
+% TexShade supports caption.
+% \showcaption{\textbf{Cardiac Calsequestrin Sequence with CPVT-Associated Missense Variants} Buried surface area, as calculated by PISA, was used to assign residues to interfaces.}
+% ... And short caption.
+% \shortcaption{Cardiac Calsequestrin Sequence with CPVT-Associated Missense Variants}
+\end{texshade}
+\footnotesize
+\begin{tabular}{ ll }
+    \multicolumn{2}{c}{\textbf{CPVT Variants Assigned to Functional Categories}} \\
+    \hline
+    Recessive (no Ph+ Heterozygotes) & Known or Putative Dominant (Ph+ Heterozygotes) \\ 
+    \hline
+    \shadebox{\colorVariantHetNegHydrophobicCore} Hydrophobic core (folding mutant) & \shadebox{\colorVariantHetPosInterDimerInterfaceInside} or \shadebox{\colorVariantHetPosInterDimerInterfaceOutside} Inter-dimer disruption \\
+    \shadebox{\colorVariantHetNegDimerInterface} Dimer disruption & \shadebox{\colorVariantHetPosPacking} Dimer packing interference (hypothesized) \\
+    \shadebox{\colorVariantHetNegUnknownMechanism} Unknown mechanism(s) & \shadebox{\colorVariantHetPosUnknownMechanism} Unknown mechanism(s) \\
+\end{tabular}
+\caption{%
+    %\textbf{Locations of CPVT-Associated Missense Variants within the Cardiac Calsequestrin Protein (CASQ2) and Its Associated Domains.} \shadebox{\colorVariantHetNegHydrophobicCore} Hydrophobic core (folding mutant) 
+% .  A) CASQ2 dimer with residues within the intra-dimer interface shaded pink.  B) CASQ2 dimer-dimer complex formed by dimer stacking. Amino acid residues localized to the inter-dimer interface shaded yellow and those hypothesized to contribute to dimer packing shaded orange. C) CASQ2 protein sequence with delineation of amino acids present within the intra-dimer and inter-dimer interfaces.  Pathogenic CASQ2 variants implicated in CPVT are highlighted and categorized by putative functional effect. Residues are assigned to interfaces according to buried surface area as calculated by PISA (Proteins, Interfaces, Structures and Assemblies program). Not Observed (Disordered) = region not observed due to disorder in Protein Data Bank CASQ2 structure 6OWV, Ph+ = phenotype positive.
+%
+% A) CASQ2 dimer with residues at the \textit{intra}-dimer interface shaded pink. B) CASQ2 dimer-dimer complex formed by dimer stacking. Amino acid residues localized to the \textit{inter}-dimer interface shaded yellow and those hypothesized to contribute to dimer packing shaded orange. C) CASQ2 protein sequence with delineation of amino acids present within the \textit{intra}-dimer and \textit{inter}-dimer interfaces. Pathogenic CASQ2 variants implicated in CPVT are highlighted and categorized by putative functional effect. Some variants of uncertain significance and possible pathogenic effect via unknown mechanism are also shown. Residues are assigned to interfaces according to buried surface area as calculated by PISA (Proteins, Interfaces, Structures and Assemblies program). Not Observed (Disordered) = region not observed due to disorder in Protein Data Bank CASQ2 structure 6OWV, Ph+ = phenotype positive.
+}
+\label{fig:summary}
+\end{figure}
+\restoregeometry
